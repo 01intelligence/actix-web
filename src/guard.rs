@@ -282,7 +282,7 @@ pub fn Host<H: AsRef<str>>(host: H) -> HostGuard {
     HostGuard(host.as_ref().to_string(), None)
 }
 
-fn get_host_uri(req: &RequestHead) -> Option<Uri> {
+pub fn get_host_uri(req: &RequestHead) -> Option<Uri> {
     use core::str::FromStr;
     req.headers
         .get(header::HOST)

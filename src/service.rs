@@ -90,6 +90,12 @@ impl ServiceRequest {
         Self { req, payload }
     }
 
+    /// Get reference to original request
+    #[inline]
+    pub fn request(&self) -> &HttpRequest {
+        &self.req
+    }
+
     /// Construct request from request.
     ///
     /// The returned `ServiceRequest` would have no payload.
